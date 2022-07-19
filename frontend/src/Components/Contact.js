@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Row, Col } from "react-bootstrap";
 
 const Contact = () => {
   return (
@@ -12,6 +13,14 @@ const Contact = () => {
         <Container>
           <h1>Welcome to the contact page</h1>
           <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail" required>
+              <Form.Label>Full Name</Form.Label>
+              <Form.Control type="text" placeholder="Enter full name" />
+              <Form.Text className="text-muted">
+                We'll never share your personal information.
+              </Form.Text>
+            </Form.Group>
+
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
@@ -20,13 +29,31 @@ const Contact = () => {
               </Form.Text>
             </Form.Group>
 
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Phone number</Form.Label>
+              <Form.Control type="text" placeholder="Enter phone number" />
+              <Form.Text className="text-muted">
+                We'll never share your personal information.
+              </Form.Text>
+            </Form.Group>
+
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
+
+            <Row>
+              <Col xs={7}>
+                <Form.Control placeholder="City" />
+              </Col>
+              <Col>
+                <Form.Control placeholder="State" />
+              </Col>
+              <Col>
+                <Form.Control placeholder="Zip" />
+              </Col>
+            </Row>
+
             <Button variant="primary" type="submit">
               Submit
             </Button>
