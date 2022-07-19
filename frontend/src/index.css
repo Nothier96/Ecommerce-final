@@ -5,3 +5,9 @@ main {
   /* margin-left: auto; */
   margin-left: auto !important;
 }
+a {
+  text-decoration: none;
+}
+body {
+  background-color: aliceblue;
+}
