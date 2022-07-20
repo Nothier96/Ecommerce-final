@@ -1,6 +1,4 @@
 import { Container } from "react-bootstrap";
-import Footer from "./Footer";
-import Header from "./Header";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Row, Col } from "react-bootstrap";
@@ -8,7 +6,6 @@ import { Row, Col } from "react-bootstrap";
 const Contact = () => {
   return (
     <div>
-      <Header />
       <main className="py-3">
         <Container>
           <h1>Welcome to the contact page</h1>
@@ -60,7 +57,6 @@ const Contact = () => {
           </Form>
         </Container>
       </main>
-      <Footer />
     </div>
   );
 };
