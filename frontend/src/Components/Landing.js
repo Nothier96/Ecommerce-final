@@ -7,11 +7,12 @@ import Products from "./Products";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+
 const Landing = () => {
   const [products1, setProducts1] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await axios.get("/products");
+      const { data } = await axios.get("/api/products");
       setProducts1(data);
     };
     fetchProducts();

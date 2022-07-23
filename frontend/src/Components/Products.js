@@ -9,12 +9,14 @@ const Products = ({ product }) => {
       <Card.Body>
         <a href={`/products/${product.id}`}>
           <Card.Title as="div">
-            <strong>{product.name}</strong>
+            <strong>{product.product_name}</strong>
           </Card.Title>
         </a>
         <Card.Text as="div">
           <div className="my-3">
             <h3>{product.price}</h3>
+            <h3>{product.rating}</h3>
+            <h3>{product.category}</h3>
           </div>
         </Card.Text>
       </Card.Body>

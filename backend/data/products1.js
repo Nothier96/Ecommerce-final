@@ -28,4 +28,4 @@ const products1 = [
     price: "$500",
   },
 ];
-module.exports = products1;
+export default products1;

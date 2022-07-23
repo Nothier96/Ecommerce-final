@@ -5,6 +5,7 @@ import Header from "./Components/Header";
 import Landing from "./Components/Landing";
 import Products from "./Components/Products";
 import { ChakraProvider } from "@chakra-ui/react";
+import Shop from "./Components/Shop";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
