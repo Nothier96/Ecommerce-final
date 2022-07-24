@@ -17,7 +17,7 @@ const Shop = () => {
       <h1>Shop</h1>
       <Row>
         {products1.map((product) => (
-          <Col sm={12} md={6} lg={4} xl={3}>
+          <Col key={product.product_id} sm={12} md={6} lg={4} xl={3}>
             <Products product={product} />
           </Col>
         ))}
