@@ -16,7 +16,10 @@ const Products = ({ product }) => {
         </Link>
         <Card.Text as="div">
           <div className="my-3">
-            <h3>{product.price}</h3>
+            <strong>
+              {" "}
+              <h3>${product.price}</h3>
+            </strong>
           </div>
         </Card.Text>
         <Card.Text as="div">
@@ -24,6 +27,14 @@ const Products = ({ product }) => {
             <Rating value={product.rating} />
           </div>
         </Card.Text>
+        <Card.Text as="div">
+          <div className="my-3">
+            <p> {product.description}</p>
+          </div>
+        </Card.Text>
+        <Link className="btn btn-light my-3" to={"/cart"}>
+          Add to cart
+        </Link>
       </Card.Body>
     </Card>
   );

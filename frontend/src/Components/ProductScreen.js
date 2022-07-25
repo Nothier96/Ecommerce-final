@@ -44,12 +44,17 @@ const ProductScreen = () => {
             <Col md={3}>
               <ListGroup>
                 <ListGroup.Item>
-                  <h3>{products1[0].product_name}</h3>
+                  <strong>
+                    <h3>{products1[0].product_name}</h3>
+                  </strong>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Rating value={products1[0].rating} />
                 </ListGroup.Item>
                 <ListGroup.Item>Price: ${products1[0].price}</ListGroup.Item>
+                <ListGroup.Item>
+                  <strong>Description: {products1[0].description}</strong>
+                </ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md={3}>
