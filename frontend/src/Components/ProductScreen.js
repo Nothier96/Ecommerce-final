@@ -1,21 +1,14 @@
-// import { Link } from "react-router-dom";
-// import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
-// import { useState, useEffect } from "react";
-// import products1 from "../products1";
-// const ProductScreen = ({ product }) => {
-//   return <h1>{product.name}</h1>;
-// };
-
-// export default ProductScreen;
+import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Rating from "./Rating";
 const ProductScreen = () => {
   const params = useParams();
   const [products1, setProducts1] = useState(undefined);
-  const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
     // const fetchProducts = async () => {
@@ -26,14 +19,69 @@ const ProductScreen = () => {
     axios.get(`/api/products/${params.id}`).then((res) => {
       //   console.log(res.data);
       setProducts1(res.data);
-      setIsPending(false);
+      //   setIsPending(false);
     });
-    if (products1 === undefined) {
-      setIsPending(true);
-    }
+    // if (products1 === undefined) {
+    //   setIsPending(true);
+    // }
   }, []);
 
-  return <div>{products1 && <div>{products1[0].product_name}</div>}</div>;
+  return (
+    <div>
+      {products1 && (
+        <>
+          <Link className="btn btn-light my-3" to={"/shop"}>
+            Go back to Shop
+          </Link>
+          <Row>
+            <Col md={6}>
+              <Image
+                src={products1[0].image}
+                alt={products1[0].product_name}
+                fluid
+              />
+            </Col>
+            <Col md={3}>
+              <ListGroup>
+                <ListGroup.Item>
+                  <h3>{products1[0].product_name}</h3>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Rating value={products1[0].rating} />
+                </ListGroup.Item>
+                <ListGroup.Item>Price: ${products1[0].price}</ListGroup.Item>
+              </ListGroup>
+            </Col>
+            <Col md={3}>
+              <Card>
+                <ListGroup variant="flush">
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Price</Col>
+                      <Col>
+                        <strong>${products1[0].price}</strong>
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Status:</Col>
+                      <Col>In Stock</Col>
+                    </Row>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <button className="btn-block" type="button">
+                      Add to Cart
+                    </button>
+                  </ListGroup.Item>
+                </ListGroup>
+              </Card>
+            </Col>
+          </Row>
+        </>
+      )}
+    </div>
+  );
 };
 
 export default ProductScreen;
