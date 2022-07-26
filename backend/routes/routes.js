@@ -24,6 +24,14 @@ router.get("/", (req, res) => {
     res.status(200).json(result);
   });
 });
+router.get("/best", (req, res) => {
+  db.query("SELECT * FROM product where price >" + 1500, (err, result) => {
+    if (err) {
+      throw err;
+    }
+    res.status(200).json(result);
+  });
+});
 router.get("/:id", (req, res) => {
   let sql = "SELECT * FROM product where product_id=" + req.params.id;
 

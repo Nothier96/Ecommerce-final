@@ -9,6 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 export const ImageWithOverlay = ({
   title,
@@ -66,14 +67,8 @@ export const ImageWithOverlay = ({
             )}
           </Stack>
           <LightMode>
-            <Button
-              bg="white"
-              color="gray.800"
-              alignSelf="start"
-              as="a"
-              href={url}
-            >
-              Shop now
+            <Button bg="white" color="gray.800" alignSelf="start" as="a">
+              <Link to={"/shop"}>Shop now</Link>
             </Button>
           </LightMode>
         </Stack>

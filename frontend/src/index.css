@@ -25,3 +25,19 @@ a {
 h3 {
   padding: 1rem 0;
 }
+.bestseller {
+  text-align: center;
+  font-size: 60px;
+  background-color: aliceblue;
+  margin: 1rem;
+}
+.footer {
+  background-color: darkgray;
+  color: #fff;
+  height: 70px;
+}
+.soon {
+  font-size: 200px;
+  text-align: center;
+  color: darkgray;
+}

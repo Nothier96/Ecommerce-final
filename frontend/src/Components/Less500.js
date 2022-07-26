@@ -5,7 +5,7 @@ import axios from "axios";
 import Products from "./Products";
 import { Link } from "react-router-dom";
 
-const Shop = () => {
+const Less500 = () => {
   const [products1, setProducts1] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
@@ -14,6 +14,8 @@ const Shop = () => {
     };
     fetchProducts();
   }, []);
+  const products = products1.filter((product) => product.price < 500);
+
   return (
     <div>
       <Link className="btn btn-light my-3" to={"/less500"}>
@@ -31,11 +33,11 @@ const Shop = () => {
       <Link className="btn btn-light my-3" to={"/tablets"}>
         tablets
       </Link>
-      <Link className="btn btn-light my-3" to={"/smartwacthes"}>
+      <Link className="btn btn-light my-3" to={"/smartwatches"}>
         Smartwatches
       </Link>
       <Row>
-        {products1.map((product) => (
+        {products.map((product) => (
           <Col key={product.product_id} sm={12} md={6} lg={4} xl={3}>
             <Products product={product} />
           </Col>
@@ -45,4 +47,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Less500;

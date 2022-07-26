@@ -7,6 +7,7 @@ import Products from "./Products";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import * as React from "react";
 
@@ -14,7 +15,7 @@ const Landing = () => {
   const [products1, setProducts1] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await axios.get("/api/products");
+      const { data } = await axios.get("/api/products/best");
       setProducts1(data);
     };
     fetchProducts();
@@ -52,14 +53,16 @@ const Landing = () => {
               }}
               align="stretch"
             >
+              <Link to={"/smartphones"}> </Link>
               <ImageWithOverlay
                 flex="1"
                 objectPosition="top center"
-                title="All dressed"
-                description="Dress that feels a little fany for when pajamas aren't cutting it"
+                title="Latests Smartphones"
+                description="The most affordable smartphones on the market"
                 src="/images/product-1.jpg"
                 alt="Lovely Image"
               />
+
               <Stack
                 spacing={{
                   base: "6",
@@ -72,12 +75,14 @@ const Landing = () => {
                 <ImageWithOverlay
                   spacing="4"
                   title="Latest Smartwatches"
+                  description="The most affordable smart watches on the market"
                   src="/images/product-2.jpg"
                   alt="Lovely Image"
                 />
                 <ImageWithOverlay
                   spacing="4"
                   title="Latest tablets"
+                  description="The most affordable tablets on the market"
                   src="/images/product-5.jpg"
                   alt="Lovely Image"
                 />
@@ -86,8 +91,7 @@ const Landing = () => {
           </Box>
 
           <Slider />
-          <h1>Latest products</h1>
-
+          <h1 className="bestseller">Best Sellers</h1>
           <Row>
             {products1.map((product) => (
               <Col key={product.product_id} sm={12} md={6} lg={4} xl={3}>
