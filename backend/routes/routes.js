@@ -25,7 +25,7 @@ router.get("/", (req, res) => {
   });
 });
 router.get("/best", (req, res) => {
-  db.query("SELECT * FROM product where price >" + 1500, (err, result) => {
+  db.query("SELECT * FROM product where price >" + 1290, (err, result) => {
     if (err) {
       throw err;
     }

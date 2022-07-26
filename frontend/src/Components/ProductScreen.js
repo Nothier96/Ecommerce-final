@@ -1,7 +1,6 @@
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Container } from "react-bootstrap";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -11,20 +10,10 @@ const ProductScreen = () => {
   const [products1, setProducts1] = useState(undefined);
 
   useEffect(() => {
-    // const fetchProducts = async () => {
-    //   const { data } = await axios.get(`/api/products/${params.id}`);
-    //   setProducts1(data);
-    // };
-    // fetchProducts();
     axios.get(`/api/products/${params.id}`).then((res) => {
-      //   console.log(res.data);
       setProducts1(res.data);
-      //   setIsPending(false);
     });
-    // if (products1 === undefined) {
-    //   setIsPending(true);
-    // }
-  }, []);
+  }, [params.id]);
 
   return (
     <div>
@@ -75,9 +64,11 @@ const ProductScreen = () => {
                     </Row>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <button className="btn-block" type="button">
-                      Add to Cart
-                    </button>
+                    <Link to={"/cart"}>
+                      <button className="btn-block" type="button">
+                        Add to Cart
+                      </button>
+                    </Link>
                   </ListGroup.Item>
                 </ListGroup>
               </Card>
