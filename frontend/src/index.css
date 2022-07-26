@@ -34,10 +34,55 @@ h3 {
 .footer {
   background-color: darkgray;
   color: #fff;
-  height: 70px;
+  height: 100px;
 }
 .soon {
   font-size: 200px;
   text-align: center;
   color: darkgray;
+}
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.hero img {
+  width: 100%;
+}
+.hero h2 {
+  font-size: 40px;
+  text-align: center;
+  padding-top: 50px;
+  color: black;
+}
+.hero p {
+  font-size: 30px;
+  text-align: center;
+  padding-top: 10px;
+  color: black;
+  margin: 30px;
+}
+@media screen and (max-width: 800px) {
+  /*This won't allow the overflow to be seen or the website to scroll horizontally*/
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
+.fa-brands {
+  padding: 20px;
+  font-size: 30px;
+  width: 60px;
+  text-decoration: none;
+  margin: 5px 30px;
+}
+
+.contactfooter {
+  font-size: 20px;
 }

@@ -4,6 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import axios from "axios";
 import Products from "./Products";
 import { Link } from "react-router-dom";
+import Heroshop from "./Heroshop";
 
 const Shop = () => {
   const [products1, setProducts1] = useState([]);
@@ -34,6 +35,7 @@ const Shop = () => {
       <Link className="btn btn-light my-3" to={"/smartwacthes"}>
         Smartwatches
       </Link>
+      <Heroshop />
       <Row>
         {products1.map((product) => (
           <Col key={product.product_id} sm={12} md={6} lg={4} xl={3}>

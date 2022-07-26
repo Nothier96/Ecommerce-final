@@ -34,11 +34,6 @@ const Contact = () => {
               </Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-
             <Row>
               <Col xs={7}>
                 <Form.Control placeholder="City" />
@@ -50,6 +45,10 @@ const Contact = () => {
                 <Form.Control placeholder="Zip" />
               </Col>
             </Row>
+            <Form.Group className="mb-3">
+              <Form.Label>What can we help with today</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
 
             <Button variant="primary" type="submit">
               Submit
