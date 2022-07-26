@@ -7,7 +7,6 @@ import Products from "./Products";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 import * as React from "react";
 
@@ -25,6 +24,9 @@ const Landing = () => {
       {" "}
       <main className="py-3">
         <Container>
+          <Slider />
+          <h1 className="bestseller">Categories</h1>
+
           <Box
             maxW="7xl"
             mx="auto"
@@ -53,11 +55,10 @@ const Landing = () => {
               }}
               align="stretch"
             >
-              <Link to={"/smartphones"}> </Link>
               <ImageWithOverlay
                 flex="1"
                 objectPosition="top center"
-                title="Latests Smartphones"
+                title="Latest Smartphones"
                 description="The most affordable smartphones on the market"
                 src="/images/product-1.jpg"
                 alt="Lovely Image"
@@ -90,7 +91,6 @@ const Landing = () => {
             </Stack>
           </Box>
 
-          <Slider />
           <h1 className="bestseller">Best Sellers</h1>
           <Row>
             {products1.map((product) => (

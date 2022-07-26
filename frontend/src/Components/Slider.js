@@ -10,8 +10,8 @@ function Slider() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h2>The Best Elctronics</h2>
+          <p>Shop a wide range of electronics available on the market</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -22,8 +22,10 @@ function Slider() {
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h2>Most Affordable Prices</h2>
+          <p>
+            Buy with us and get points that may help buy your next cool tech
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -34,10 +36,8 @@ function Slider() {
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h2>Your Best Tech</h2>
+          <p>The best quality and customer service</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
