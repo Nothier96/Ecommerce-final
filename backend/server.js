@@ -1,10 +1,11 @@
 import {} from "dotenv/config";
 import express from "express";
 import path from "path";
-
+import cors from ('cors');
 const app = express();
 import routes from "./routes/routes.js";
 
+app.use(cors())
 app.use("/api/products", routes);
 
 const __dirname = path.resolve;
