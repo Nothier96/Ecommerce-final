@@ -1,15 +1,23 @@
+import {} from "dotenv/config";
 import express from "express";
-import products1 from "./data/products1.js";
-import dotenv from "dotenv";
+import path from "path";
 
 const app = express();
 import routes from "./routes/routes.js";
 
 app.use("/api/products", routes);
 
-app.get("/", (req, res) => {
-  res.send("Api is running");
-});
+const __dirname = path.resolve;
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "frontend/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("Api is running");
+  });
+}
 const PORT = process.env.PORT || 5000;
 app.listen(
   PORT,
