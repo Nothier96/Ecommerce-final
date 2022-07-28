@@ -1,6 +1,7 @@
 /* main {
   height: 100vh;
 } */
+
 .me-auto {
   /* margin-left: auto; */
   margin-left: auto !important;
@@ -8,6 +9,7 @@
 a {
   text-decoration: none;
 }
+
 .btn {
   border-style: solid;
   border-width: 0 1px 4px 1px;
@@ -28,7 +30,6 @@ h3 {
 .bestseller {
   text-align: center;
   font-size: 60px;
-  background-color: aliceblue;
   margin: 1rem;
 }
 .footer {
@@ -85,4 +86,13 @@ h3 {
 
 .contactfooter {
   font-size: 20px;
+}
+.my-3 {
+  cursor: pointer;
+  border: none;
+}
+.my-3:hover {
+  background-color: black;
+  color: white;
+  border-radius: 5%;
 }

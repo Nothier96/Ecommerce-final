@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import axios from "axios";
 import Products from "./Products";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ const Less500 = () => {
   const products = products1.filter((product) => product.price < 500);
 
   return (
-    <div>
+    <Container>
       <Link className="btn btn-light my-3" to={"/less500"}>
         $500 or less
       </Link>
@@ -45,7 +45,7 @@ const Less500 = () => {
           </Col>
         ))}
       </Row>
-    </div>
+    </Container>
   );
 };
 
