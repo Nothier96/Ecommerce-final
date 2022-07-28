@@ -46,7 +46,7 @@ const Contact = () => {
               </Col>
             </Row>
             <Form.Group className="mb-3">
-              <Form.Label>What can we help with today</Form.Label>
+              <Form.Label>How can we serve you today ?</Form.Label>
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
 
