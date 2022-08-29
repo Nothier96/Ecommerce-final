@@ -18,8 +18,8 @@ a {
 }
 .btn-primary {
   color: #fff;
-  background-color: darkslategrey;
-  border-color: darkslategrey;
+  background-color: rgb(24, 30, 30);
+  border-color: rgb(24, 30, 30);
 }
 .rating span {
   margin: 0.1rem;
